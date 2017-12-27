@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>pillow. Powerful pure JS listing plugin</title>
+</head>
+<body>
+
+    <h1>pillow</h1>
+    <h2>Powerful pure JS listing plugin</h2>
+
+    <pillow-listing></pillow-listing>
+
+    <script src="../dist/bundle.js"></script>
+    <script>
+        new Pillow({
+            showHeader: true,
+            instanceName: 'pillow test',
+            enableCollapse: true,
+            headerUrl: 'youtube.com'
+        });
+    </script>
+
+</body>
+</html>

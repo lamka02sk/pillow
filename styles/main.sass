@@ -1,0 +1,65 @@
+.pillow-instance
+  display: inline-block
+  position: relative
+  width: 100%
+  height: auto
+  float: left
+  overflow: hidden
+
+  .pillow-instance-header
+    display: inline-block
+    position: relative
+    float: left
+    width: 100%
+    height: auto
+    background: #f5f5f5
+    box-sizing: border-box
+    border: 1px solid silver
+    border-bottom: none
+    box-shadow: 0 0 6px rgba(0,0,0,.1)
+
+    .pillow-header-content
+      display: inline-block
+      position: relative
+      float: left
+      width: 100%
+      height: 36px
+      line-height: 36px
+      box-sizing: border-box
+      padding: 0 12px
+      font-size: .9rem
+
+      .pillow-header-text-link
+        display: inline-block
+        position: relative
+        width: auto
+        height: 100%
+
+        &[href]
+          cursor: pointer
+          color: black
+          text-decoration: none
+
+          &:hover
+            text-decoration: underline
+      
+      .pillow-header-collapse
+        display: inline-block
+        position: relative
+        width: auto
+        height: 100%
+        float: right
+        font-size: .75rem
+        border: none
+        outline: none
+        cursor: pointer
+        background: url('../assets/img/collapse.svg') right center no-repeat
+        background-size: 20px
+        padding-right: 24px
+        
+        &:hover
+          text-decoration: underline
+
+
+.pillow-hidden
+  display: none !important
