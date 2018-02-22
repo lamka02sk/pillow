@@ -1,5 +1,5 @@
 {
-  "name": "pillow",
+  "name": "pillow-listing",
   "version": "1.0.0",
   "description": "Powerful pure JS listing plugin",
   "main": "dist/bundle.js",

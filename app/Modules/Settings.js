@@ -18,37 +18,31 @@ export default class {
         this.locale = {
             'pillow-collapse': 'Collapse',
             'pillow-collapse.open': 'Expand',
-            'pillow-collapse-text': 'Hide content',
-            'pillow-collapse-text.open': 'Show content',
-            'pillow-filters-empty': 'No filters specified',
+            'pillow-filters-empty': 'No filters active',
             'pillow-filters-clear': 'Reset filters',
-            'pillow-filters-collapse': 'Collapse filters',
+            'pillow-filters-collapse': 'Filters',
             'pillow-filters-collapse.open': 'Expand filters',
-            'pillow-filter-collapse-text': 'Hide filters',
-            'pillow-filter-collapse-text.open': 'Show filters'
+            'pillow-filters-search': 'Find',
+            'pillow-filters-none': 'There are no filters',
+            'pillow-filters-title': 'Filter results by'
         };
 
         this.element = 'pillow-listing';
         this.instanceAttributes = {};
-        this.autoRefresh = true;
 
         this.search = true;
-        this.indexing = true;
-        this.indexAllText = true;
-        this.indexAttributes = [];
-        this.typeToFind = true;
-        this.autoReindex = true;
+        this.searchAttributes = [];
 
         this.filter = true;
-        this.filterIndexing = true;
-        this.filterProperties = [];
-        this.sortBy = false;
+        this.filterProperties = [];     // Array []
+        this.sortBy = [null, false];    // Property, Asc
 
         this.showHeader = false;
         this.instanceName = 'pillow';
         this.headerUrl = false;
         this.enableCollapse = false;
 
+        // Items and data
         this.itemTemplate = false;
         this.data = {};
         this.addLinks = false;
@@ -59,10 +53,12 @@ export default class {
             }
         };
 
+        // Pagination
         this.paginate = true;
         this.itemsNumber = 10;
         this.showPages = 5;
 
+        // API
         this.api = false;
         this.apiUrl = '';
         this.apiKey = '';
@@ -72,12 +68,13 @@ export default class {
         this.apiProcess = true;
         this.apiParseResponse = () => {};
 
+        // Events
         this.onRefresh = () => {};
         this.onCreate = () => {};
         this.onFilter = () => {};
         this.onDestroy = () => {};
         this.onSearch = () => {};
-        this.onAPICall = () => {};
+        this.onAPIResponse = () => {};
         this.onSort = () => {};
         this.onClick = () => {};
         this.onAdd = () => {};

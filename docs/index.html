@@ -18,9 +18,27 @@
             showHeader: true,
             instanceName: 'pillow test',
             enableCollapse: true,
-            headerUrl: 'youtube.com'
+            headerUrl: 'https://youtube.com',
+            filterProperties: [
+                {
+                    title: 'Lorem',
+                    property: 'id',
+                    sort: true
+                },
+                {
+                    title: 'Dolor',
+                    property: 'name',
+                    value: 'value'
+                }
+            ]
         });
     </script>
+
+    <style>
+        .pillow-instance {
+            max-width: 720px
+        }
+    </style>
 
 </body>
 </html>

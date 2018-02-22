@@ -4,7 +4,12 @@
   width: 100%
   height: auto
   float: left
+  box-sizing: border-box
+  border: 1px solid silver
   overflow: hidden
+
+  *
+    font-family: sans-serif
 
   .pillow-instance-header
     display: inline-block
@@ -13,10 +18,8 @@
     width: 100%
     height: auto
     background: #f5f5f5
-    box-sizing: border-box
-    border: 1px solid silver
     border-bottom: none
-    box-shadow: 0 0 6px rgba(0,0,0,.1)
+    z-index: 2
 
     .pillow-header-content
       display: inline-block
@@ -42,6 +45,9 @@
 
           &:hover
             text-decoration: underline
+
+        .pillow-header-text
+          margin: 0
       
       .pillow-header-collapse
         display: inline-block
@@ -60,6 +66,142 @@
         &:hover
           text-decoration: underline
 
+  .pillow-instance-filter
+    display: inline-block
+    position: relative
+    float: left
+    width: 100%
+    height: auto
+    background: #f2f2f2
+    font-size: .72rem
+
+    .pillow-filters-active
+      display: inline-block
+      position: relative
+      width: 100%
+      height: 32px
+      line-height: 33px
+      float: left
+      box-shadow: 0 0 4px rgba(0,0,0,.05)
+      z-index: 1
+
+      .pillow-filters-collapse
+        display: inline-block
+        position: relative
+        float: left
+        width: auto
+        height: 24px
+        margin: 4px 8px
+        padding: 0 6px 0 28px
+        cursor: pointer
+        outline: none
+        border: none
+        font-size: .72rem
+        background: rgba(0,0,0,.1) url('../assets/img/filter.svg') left 6px center no-repeat
+        background-size: 18px
+        line-height: 26px
+
+        &:hover
+          background-color: rgba(0,0,0,.15)
+
+      .pillow-filters-any
+        display: inline-block
+        position: relative
+        float: left
+        opacity: .7
+
+      .pillow-filters-search
+        display: inline-block
+        height: 100%
+        width: 190px
+        background: white url('../assets/img/search.svg') left 8px center no-repeat
+        background-size: 16px
+        float: right
+        outline: none
+        border: none
+        font-size: .72rem
+        padding: 0 10px 0 28px
+        box-sizing: border-box
+        color: #333
+        opacity: .8
+
+        &:focus
+          opacity: 1
+
+    .pillow-filters-list
+      display: inline-block
+      position: relative
+      float: left
+      width: 100%
+      padding: 10px
+      background: #fbfbfb
+      box-sizing: border-box
+
+      .pillow-filters-title
+        margin: 0 0 6px 0
+        position: relative
+        float: left
+        font-size: 1rem
+        color: #333
+        padding: 0 2px
+
+      .pillow-filters-wrapper
+        position: relative
+        float: left
+        width: 100%
+        display: inline-block
+
+        .pillow-filters-empty
+          display: none
+
+        &:empty .pillow-filters-empty
+          display: inline-block
+          position: relative
+          float: left
+          width: 100%
+          text-align: center
+          margin: 18px 0
+          font-size: 1.4rem
+          color: grey
+
+        .pillow-filter-item
+          border: none
+          outline: none
+          position: relative
+          float: left
+          margin-right: 6px
+          border-radius: 12px
+          height: 24px
+          padding: 0 10px
+          font-size: .75rem
+          cursor: pointer
+          box-sizing: border-box
+
+          &:hover
+            background: #dedede
+
+          &.active
+            border: 1px solid silver
+            background: white
+
+      .pillow-filters-footer
+        display: inline-block
+        position: relative
+        float: left
+        width: 100%
+        margin-top: 8px
+
+        .pillow-filters-clear
+          border: none
+          outline: none
+          height: 24px
+          background: url('../assets/img/remove.svg') transparent left 4px center no-repeat
+          background-size: 12px
+          float: right
+          position: relative
+          font-size: .75rem
+          padding-left: 16px
+          cursor: pointer
 
 .pillow-hidden
   display: none !important

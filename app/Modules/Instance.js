@@ -1,4 +1,7 @@
 import Helpers from './Helpers'
+import Torso from "./Instance/Torso";
+import Header from "./Instance/Header";
+import Filter from "./Instance/Filter";
 
 export default class {
 
@@ -14,52 +17,21 @@ export default class {
         this.Layout = null;
 
         this.createLayout();
-
-    }
-
-    _createTorso() {
-
-        this.Layout = Helpers.createHTML(
-            require('./../Layouts/layout.pug'), this.Settings.instanceAttributes
-        );
-
-    }
-
-    _createHeader() {
-
-        if(!this.Settings.showHeader)
-            this.Layout.children[0].classList.add('pillow-hidden');
-
-        const html = Helpers.createHTML(
-            require('./../Layouts/header.pug')
-        );
-
-        if(this.Settings.headerUrl) {
-            html.children[0].setAttribute('href', this.Settings.headerUrl);
-            html.children[0].setAttribute('target', '_blank');
-            html.children[0].setAttribute('rel', 'noopener');
-        }
-
-        html.children[0].children[0].textContent = this.Settings.instanceName;
-
-        if(!this.Settings.enableCollapse)
-            html.children[1].classList.add('pillow-hidden');
-
-        this.Layout.children[0].appendChild(html);
+        Helpers.translate(this.Element, this.Settings.locale);
 
     }
 
     createLayout() {
 
         // Compile torso
-        this._createTorso();
+        this.Layout = new Torso(this.Settings.instanceAttributes);
 
         // Compile header
-        this._createHeader();
+        new Header(this.Layout, this.Settings);
 
-        // Compile filer
-
-        // Compile filter list
+        // Compile filter
+        const filter = new Filter(this.Layout, this.Settings);
+        filter.filtersList();
 
         // Compile content
 
@@ -67,7 +39,7 @@ export default class {
 
         // Compile pagination
 
-        this.Element.parentNode.replaceChild(this.Layout, this.Element);
+        this.Element.appendChild(this.Layout, this.Element);
 
     }
 
