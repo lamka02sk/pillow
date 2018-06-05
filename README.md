@@ -1,3 +1,5 @@
+**⚠️ WARNING:** This repository is moved to Gitlab (https://gitlab.com/lamka02sk/pillow) and no longer updated here.
+
 # pillow
 Powerful pure JS listing plugin
 
